@@ -1,8 +1,15 @@
-<div class="w3-bar" style="background-color:#a67512;">
-    <a href="/" class="w3-bar-item w3-button">Inicio</a>
-    <a href="/galeria" class="w3-bar-item w3-button">Galería</a>
-    <a href="/venenosas" class="w3-bar-item w3-button">Serpientes Venenosas</a>
 
+<div class="sidenav">
+<img src="{{ asset('images/logo.png') }}" alt="Fondo" class="img-logo">
+<p class="lema">LUZ, CIENCIA Y VERDAD</p>
+<a href="/">Inicio</a>
+<a href="/galeria">Aspirantes</a>
+<a href="/venenosas">Estudiantes</a>
+<a href="/venenosas">Egresados</a>
+<a href="/venenosas">Nuestra Facultad</a>
+<a href="/venenosas">Oferta Educativa</a>
+<a href="/venenosas">Investigación</a>
+<a href="/venenosas">Vinculación</a>
+<a href="/venenosas">Internacionalización</a>
+<x-flecha-scroll /> 
 </div>
-
-<hr>

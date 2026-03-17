@@ -1,0 +1,58 @@
+.tarjeta {
+    display: flex;
+    flex-direction: column; /* Importante para alinear botones abajo */
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px); /* Se levanta un poco en lugar de hacerse grande */
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
+}
+.tarjeta img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.tarjeta h3 {
+    color: var(--uady-azul);
+    font-size: 18px;
+    margin: 10px 0;
+    font-family: "Georgia", serif;
+}
+
+.tarjeta p {
+    color: var(--texto-secundario);
+    font-size: 14px;
+    line-height: 1.5;
+    flex-grow: 1; /* Empuja el botón hacia abajo si el texto es corto */
+    margin-bottom: 20px;
+}
+
+/* Botón para la tarjeta */
+.btn-dorado {
+    background-color: var(--uady-dorado);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+    align-self: center; /* Centra el botón */
+}
+
+.btn-dorado:hover {
+    background-color: var(--uady-dorado-hover);
+    color: white;
+}

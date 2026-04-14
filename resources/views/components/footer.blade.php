@@ -38,9 +38,9 @@
             <h4>Síguenos</h4>
 
             <div class="social">
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">YouTube</a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a> 
             </div>
         </div>
 

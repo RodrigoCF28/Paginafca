@@ -4,8 +4,8 @@
 <p class="lema">LUZ, CIENCIA Y VERDAD</p>
 <a href="/">Inicio</a>
 <a href="/galeria">Aspirantes</a>
-<a href="/venenosas">Estudiantes</a>
-<a href="/venenosas">Egresados</a>
+<a href="/docentes">Docentes</a>
+<a href="/">Egresados</a>
 <a href="/venenosas">Nuestra Facultad</a>
 <a href="/venenosas">Oferta Educativa</a>
 <a href="/venenosas">Investigación</a>

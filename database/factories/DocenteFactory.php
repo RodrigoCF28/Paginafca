@@ -20,10 +20,11 @@ class DocenteFactory extends Factory
 
         $genero = fake()->randomElement(['men', 'women']);
         $numero = fake()->numberBetween(1, 99);
+        $nombre = fake()->firstName();
 
         return [
             'nombre' => fake()->name(),
-            'correo' => fake()->unique()->safeEmail(),
+            'correo' => strtolower($nombre . '.' . fake()->lastName()) . '@docentes.uady.mx',
             'grado_academico' => fake()->randomElement($grados),
 
             'foto' => "https://randomuser.me/api/portraits/{$genero}/{$numero}.jpg",

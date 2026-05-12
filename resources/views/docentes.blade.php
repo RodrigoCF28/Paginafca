@@ -24,20 +24,30 @@
                     @foreach($docentesGrupo as $docente)
                         <article class="tarjeta-docente docente-card" data-search="{{ strtolower($docente->nombre . ' ' . $docente->linea_academica . ' ' . $categoria) }}">
                             <div class="foto-container">
-                                <img src="{{ $docente->foto }}" alt="{{ $docente->nombre }}">
+                                <!-- Re-using the card style definition for cleaner structure -->
+                                <img src="{{ $docente->foto }}" alt="{{ $docente->nombre }}" class="foto-docente-main">
                             </div>
 
                             <div class="info-docente">
-                                <h3>{{ $docente->nombre }}</h3>
-
-                                <div class="contacto-item">
-                                    <i class="fas fa-book"></i>
-                                    <span><strong>Línea académica:</strong> {{ $docente->linea_academica }}</span>
+                                <!-- MOVED INSIDE and before the name -->
+                                <div class="grado-badge">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>{{ $docente->grado_academico }}</span>
+                                
                                 </div>
 
-                                <div class="contacto-item">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>{{ $docente->correo }}</span>
+                                <h3>{{ $docente->nombre }}</h3>
+
+                                <div class="contacto-wrapper">
+                                    <div class="contacto-item linea-academica">
+                                        <i class="fas fa-book"></i>
+                                        <span><strong>Línea académica:</strong> {{ $docente->linea_academica }}</span>
+                                    </div>
+
+                                    <div class="contacto-item correo">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>{{ $docente->correo }}</span>
+                                    </div>
                                 </div>
                             </div>
 

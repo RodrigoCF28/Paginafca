@@ -1,0 +1,995 @@
+/* =========================================================
+   EGRESADOS FCA · PREMIUM UI
+========================================================= */
+
+:root{
+    --section-spacing: 120px;
+    --card-radius: 28px;
+    --soft-shadow:
+        0 10px 30px rgba(0,0,0,.06),
+        0 25px 60px rgba(0,0,0,.08);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.egresados-hero{
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.35),
+        rgba(90,0,0,.55)
+    ),
+    url('../images/graduados/banner.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.egresados-hero::after{
+
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background:
+    linear-gradient(
+        to right,
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.18),
+        transparent
+    );
+
+    z-index: 1;
+}
+
+.egresados-overlay{
+
+    position: absolute;
+    inset: 0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(255,255,255,.02),
+        rgba(0,0,0,.45)
+    );
+
+    z-index: 1;
+}
+
+.egresados-hero-content{
+
+    position: relative;
+    z-index: 3;
+
+    max-width: 850px;
+
+    padding-left: 8%;
+    padding-right: 30px;
+
+    color: white;
+}
+
+.egresados-badge{
+
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.10);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.egresados-hero h1{
+
+    font-size: clamp(4rem, 8vw, 7rem);
+
+    line-height: .95;
+
+    font-weight: 800;
+
+    margin-bottom: 25px;
+}
+
+.egresados-hero h1 span{
+    color: var(--uady-dorado);
+}
+
+.egresados-hero p{
+
+    max-width: 650px;
+
+    font-size: 1.2rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 42px;
+
+    color: rgba(255,255,255,.9);
+}
+
+.egresados-actions{
+
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn-egresados-primary,
+.btn-egresados-secondary{
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 30px;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.btn-egresados-primary{
+
+    background: var(--uady-dorado);
+
+    color: white;
+
+    box-shadow:
+        0 12px 28px rgba(200,155,60,.25);
+}
+
+.btn-egresados-primary:hover{
+
+    transform: translateY(-4px);
+
+    background: #d7ab4d;
+}
+
+.btn-egresados-secondary{
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    background: rgba(255,255,255,.05);
+
+    color: white;
+
+    backdrop-filter: blur(12px);
+}
+
+.btn-egresados-secondary:hover{
+
+    transform: translateY(-4px);
+
+    background: rgba(255,255,255,.10);
+}
+
+/* =========================================================
+   CARDS SECTION
+========================================================= */
+
+.egresados-cards-section{
+
+    width: 100%;
+
+    padding: 90px 0;
+
+    background:
+    linear-gradient(
+        180deg,
+        #f8f5ea 0%,
+        #ffffff 100%
+    );
+}
+
+.egresados-cards-container{
+
+    max-width: 1300px;
+
+    margin: 0 auto;
+
+    padding: 0 40px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+.egresados-card{
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 34px;
+
+    border-radius: var(--card-radius);
+
+    background: rgba(255,255,255,.88);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(11,60,93,.08);
+
+    box-shadow: var(--soft-shadow);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.egresados-card:hover{
+
+    transform: translateY(-8px);
+
+    border-color: rgba(200,155,60,.25);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.08),
+        0 30px 70px rgba(0,0,0,.10);
+}
+
+.egresados-card::before{
+
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform: translateX(-100%);
+
+    transition: transform 1s ease;
+}
+
+.egresados-card:hover::before{
+    transform: translateX(100%);
+}
+
+.egresados-card-icon{
+
+    width: 66px;
+    height: 66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 20px;
+
+    background: var(--uady-azul);
+
+    color: white;
+
+    font-size: 1.5rem;
+}
+
+.egresados-card h3{
+
+    font-size: 1.45rem;
+
+    margin-bottom: 14px;
+
+    color: var(--uady-azul);
+}
+
+.egresados-card p{
+
+    color: #546170;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.egresados-card a{
+
+    text-decoration: none;
+
+    color: var(--uady-dorado);
+
+    font-weight: 800;
+}
+
+/* =========================================================
+   COLLAGE
+========================================================= */
+
+.egresados-collage-section{
+
+    width: 100%;
+
+    padding: var(--section-spacing) 0;
+
+    background:
+    linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f6f5f0 100%
+    );
+
+    overflow: hidden;
+}
+
+.egresados-collage{
+
+    position: relative;
+
+    max-width: 1500px;
+
+    min-height: 950px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 34px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0B3C5D 0%,
+        #123f68 50%,
+        #c89b3c 100%
+    );
+}
+
+.egresados-collage::before{
+
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at top left, rgba(255,255,255,.12), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,.10), transparent 30%);
+}
+
+.collage-center{
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 10;
+    pointer-events: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: white;
+}
+
+.collage-center h2{
+
+    max-width: 900px;
+
+    margin-bottom: 18px;
+
+    font-size: clamp(2.8rem, 5vw, 5rem);
+
+    line-height: 1.05;
+}
+
+.collage-center p{
+
+    max-width: 760px;
+
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+
+    opacity: .95;
+}
+
+.collage-item{
+
+    position: absolute;
+
+    z-index: 8;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    backdrop-filter: blur(4px);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.24);
+
+    opacity: 0;
+
+    transition:
+        transform 1s cubic-bezier(.22,1,.36,1),
+        opacity 1s ease,
+        box-shadow .7s ease;
+}
+/* =========================================================
+   COLLAGE ENTRY ANIMATIONS
+========================================================= */
+
+/* LEFT */
+
+.collage-left-top,
+.collage-left-mid{
+
+    transform:
+        translateX(-220px)
+        scale(.92);
+}
+
+/* RIGHT */
+
+.collage-right-top,
+.collage-right-mid{
+
+    transform:
+        translateX(220px)
+        scale(.92);
+}
+
+/* TOP CENTER */
+
+.collage-top-center{
+
+    transform:
+        translate(-50%, -220px)
+        scale(.92);
+}
+
+/* BOTTOM */
+
+.collage-bottom-left,
+.collage-bottom-right{
+
+    transform:
+        translateY(220px)
+        scale(.92);
+}
+
+.collage-bottom-center{
+
+    transform:
+        translate(-50%, 220px)
+        scale(.92);
+}
+
+/* ACTIVE */
+
+.collage-item.in-view{
+
+    opacity: 1;
+}
+
+/* RESET */
+
+.collage-left-top.in-view,
+.collage-left-mid.in-view,
+.collage-right-top.in-view,
+.collage-right-mid.in-view,
+.collage-bottom-left.in-view,
+.collage-bottom-right.in-view{
+
+    transform:
+        translate(0,0)
+        scale(1);
+}
+
+.collage-top-center.in-view{
+
+    transform:
+        translate(-50%, 0)
+        scale(1);
+}
+
+.collage-bottom-center.in-view{
+
+    transform:
+        translate(-50%, 0)
+        scale(1);
+}
+
+.collage-item img{
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .8s ease,
+        filter .8s ease;
+}
+
+.collage-item:hover img{
+
+    transform: scale(1.06);
+
+    filter: brightness(1.04);
+}
+
+.collage-item.in-view{
+    opacity: 1;
+}
+
+/* POSITIONS */
+
+.collage-left-top{
+    width: 120px;
+    height: 120px;
+    top: 40px;
+    left: 20px;
+}
+
+.collage-left-mid{
+    width: 260px;
+    height: 300px;
+    top: 230px;
+    left: 0;
+}
+
+.collage-top-center{
+    width: 360px;
+    height: 250px;
+    top: 16px;
+    left: 50%;
+}
+
+.collage-right-top{
+    width: 300px;
+    height: 260px;
+    top: 20px;
+    right: 18px;
+}
+
+.collage-right-mid{
+    width: 220px;
+    height: 220px;
+    top: 360px;
+    right: 90px;
+}
+
+.collage-bottom-left{
+    width: 180px;
+    height: 180px;
+    left: 120px;
+    bottom: 28px;
+}
+
+.collage-bottom-center{
+    width: 330px;
+    height: 220px;
+    left: 50%;
+    bottom: 18px;
+}
+
+.collage-bottom-right{
+    width: 270px;
+    height: 190px;
+    right: 20px;
+    bottom: 18px;
+}
+
+/* =========================================================
+   PROFILES
+========================================================= */
+
+.graduates-showcase{
+
+    padding: var(--section-spacing) 7%;
+}
+
+.section-heading{
+
+    text-align: center;
+
+    margin-bottom: 80px;
+}
+
+.section-heading span{
+
+    color: var(--uady-dorado);
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.section-heading h2{
+
+    margin: 18px 0;
+
+    font-size: clamp(2.8rem, 5vw, 4rem);
+
+    color: var(--uady-azul);
+}
+
+.section-heading p{
+
+    font-size: 1.08rem;
+
+    color: #555;
+}
+
+.graduates-grid{
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 35px;
+}
+
+.graduate-profile{
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: var(--card-radius);
+
+    background: white;
+
+    box-shadow: var(--soft-shadow);
+
+    opacity: 0;
+
+    transform: translateY(60px);
+
+    animation: revealCard .8s ease forwards;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.graduate-profile:hover{
+
+    transform: translateY(-10px);
+}
+
+.graduate-profile::before{
+
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transform: translateX(-100%);
+
+    transition: transform 1s ease;
+}
+
+.graduate-profile:hover::before{
+    transform: translateX(100%);
+}
+
+.graduate-profile:nth-child(1){ animation-delay: .1s; }
+.graduate-profile:nth-child(2){ animation-delay: .2s; }
+.graduate-profile:nth-child(3){ animation-delay: .3s; }
+.graduate-profile:nth-child(4){ animation-delay: .4s; }
+.graduate-profile:nth-child(5){ animation-delay: .5s; }
+.graduate-profile:nth-child(6){ animation-delay: .6s; }
+
+.graduate-image{
+
+    height: 320px;
+
+    overflow: hidden;
+}
+
+.graduate-image img{
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+.graduate-profile:hover img{
+    transform: scale(1.08);
+}
+
+.graduate-body{
+    padding: 35px;
+}
+
+.graduate-generation{
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--uady-dorado);
+
+    font-weight: 700;
+}
+
+.graduate-body h3{
+
+    font-size: 1.7rem;
+
+    margin-bottom: 12px;
+
+    color: var(--uady-azul);
+}
+
+.graduate-job{
+
+    margin-bottom: 15px;
+
+    color: var(--uady-dorado);
+}
+
+.graduate-body p{
+
+    margin-bottom: 25px;
+
+    color: #555;
+
+    line-height: 1.8;
+}
+
+.graduate-company{
+
+    margin-bottom: 20px;
+
+    color: #777;
+
+    font-weight: 700;
+}
+
+.graduate-body a{
+
+    text-decoration: none;
+
+    color: var(--uady-azul);
+
+    font-weight: 700;
+}
+
+@keyframes revealCard{
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.graduates-cta{
+
+    padding: 140px 20px;
+
+    background:
+    linear-gradient(
+        rgba(11,60,93,.92),
+        rgba(11,60,93,.92)
+    ),
+    url('../images/graduados/banner2.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.graduates-cta-content{
+
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+
+    color: white;
+}
+
+.graduates-cta-content span{
+
+    color: var(--uady-dorado);
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.graduates-cta-content h2{
+
+    margin: 25px 0;
+
+    font-size: clamp(2.8rem, 5vw, 4rem);
+}
+
+.graduates-cta-content p{
+
+    margin-bottom: 40px;
+
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+}
+
+.graduates-cta-buttons{
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px){
+
+    .egresados-cards-container{
+        grid-template-columns: 1fr;
+    }
+
+    .egresados-collage{
+        min-height: 1200px;
+    }
+
+    .collage-top-center{
+        width: 300px;
+        height: 210px;
+    }
+
+    .collage-right-top{
+        width: 240px;
+        height: 220px;
+    }
+
+    .collage-left-mid{
+        width: 220px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px){
+
+    :root{
+        --section-spacing: 90px;
+    }
+
+    .egresados-hero{
+        min-height: 92vh;
+    }
+
+    .egresados-hero-content{
+        padding-top: 100px;
+    }
+
+    .egresados-hero h1{
+        font-size: 3.5rem;
+    }
+
+    .egresados-cards-container{
+        padding: 0 18px;
+    }
+
+    .egresados-card{
+        padding: 26px;
+    }
+
+    .egresados-collage{
+
+        min-height: 1450px;
+
+        border-radius: 24px;
+    }
+
+    .collage-left-top{
+        width: 90px;
+        height: 90px;
+    }
+
+    .collage-left-mid{
+        width: 180px;
+        height: 220px;
+    }
+
+    .collage-top-center{
+        width: 220px;
+        height: 160px;
+    }
+
+    .collage-right-top{
+        width: 180px;
+        height: 170px;
+    }
+
+    .collage-right-mid{
+        width: 150px;
+        height: 150px;
+    }
+
+    .collage-bottom-left{
+        width: 130px;
+        height: 130px;
+    }
+
+    .collage-bottom-center{
+        width: 210px;
+        height: 150px;
+    }
+
+    .collage-bottom-right{
+        width: 170px;
+        height: 130px;
+    }
+
+    .graduates-cta-content h2{
+        font-size: 2.8rem;
+    }
+}

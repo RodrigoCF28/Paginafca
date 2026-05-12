@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="{{ asset('css/sidenav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/tarjeta.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estructraycontent.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/toggle.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/egresados.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/facultad.css') }}">
 </head>
 
 <body>
@@ -132,6 +133,163 @@
         }
 
     });
+</script>
+
+<script>
+
+window.addEventListener('scroll', () => {
+
+    const hero = document.querySelector('.egresados-hero');
+
+    if(hero){
+
+        let scroll = window.scrollY;
+
+        hero.style.backgroundPositionY = scroll * 0.5 + 'px';
+    }
+});
+
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const collage = document.querySelector(".egresados-collage");
+    const collageItems = document.querySelectorAll(".collage-item");
+
+    if(!collage || collageItems.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                collageItems.forEach((item, index) => {
+
+                    setTimeout(() => {
+
+                        item.classList.add("in-view");
+
+                    }, index * 220);
+                });
+
+                observer.unobserve(collage);
+            }
+        });
+
+    }, {
+        threshold: 0.25
+    });
+
+    observer.observe(collage);
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const timelineItems = document.querySelectorAll(".timeline-item");
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+            }
+        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    timelineItems.forEach(item => {
+        observer.observe(item);
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const directoryCards = document.querySelectorAll(".directory-card");
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+            }
+        });
+
+    }, {
+        threshold: 0.2
+    });
+
+    directoryCards.forEach(card => {
+        observer.observe(card);
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const counters = document.querySelectorAll(".counter");
+
+    const speed = 200;
+
+    const animateCounters = () => {
+
+        counters.forEach(counter => {
+
+            const target = +counter.dataset.target;
+
+            const updateCount = () => {
+
+                const current = +counter.innerText;
+
+                const increment = Math.ceil(target / speed);
+
+                if(current < target){
+
+                    counter.innerText = current + increment;
+
+                    setTimeout(updateCount, 12);
+
+                }else{
+
+                    counter.innerText = target;
+                }
+            };
+
+            updateCount();
+        });
+    };
+
+    const metricsSection = document.querySelector(".plan-metrics");
+
+    if(metricsSection){
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    animateCounters();
+
+                    observer.disconnect();
+                }
+            });
+
+        }, {
+            threshold: 0.4
+        });
+
+        observer.observe(metricsSection);
+    }
+});
 </script>
 </body>
 </html>

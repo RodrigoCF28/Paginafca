@@ -6,8 +6,10 @@ use Illuminate\Database\Seeder;
 use App\Models\Docente;
 use App\Models\Noticia;
 use App\Models\Carrusel;
+use Database\Seeders\GraduateSeeder;
 
 class DatabaseSeeder extends Seeder
+
 {
     public function run(): void
     {
@@ -54,5 +56,11 @@ class DatabaseSeeder extends Seeder
             'titulo' => 'Tercer Slide',
             'descripcion' => 'Descripción del tercer slide'
         ]);
+
+        $this->call([
+        GraduateSeeder::class,
+        ]);
     }
+
 }
+

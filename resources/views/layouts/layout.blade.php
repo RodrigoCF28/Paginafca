@@ -145,7 +145,9 @@
 
                 closeMenu.addEventListener(
                     "click",
-                    cerrarMenu
+                    () => {
+                        cerrarMenu();
+                    }
                 );
 
             }

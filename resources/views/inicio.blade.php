@@ -2,30 +2,30 @@
 
 @section('contenido')
 
-
-<img src="{{ asset('images/fondo.png') }}" alt="Fondo" class="img-inicio">
-
-<div class="galeria">
-
-@foreach($noticias as $noticia)
-
-<x-tarjeta 
-    :imagen="$noticia->imagen"
-    :titulo="$noticia->titulo"
-    :descripcion="$noticia->descripcion"
-/>
-
-@endforeach
-
-
-</div>
-<div class="carrusel">
-
-@foreach($carruseles as $item)
-    <div class="slide">
-        <img src="{{ asset($item->imagen) }}">
+<div class="contenedor-inicio">
+    <!-- CARRUSEL COMO BANNER PRINCIPAL -->
+    <div class="carrusel">
+        @forelse($carruseles as $item)
+            <div class="slide">
+                <img src="{{ asset($item->imagen) }}" alt="{{ $item->titulo }}">
+            </div>
+        @empty
+            <div class="slide active">
+                <img src="{{ asset('images/fondo.png') }}" alt="Banner Principal">
+            </div>
+        @endforelse
     </div>
-@endforeach
 
+    <!-- GALERÍA DE NOTICIAS -->
+    <div class="galeria">
+        @foreach($noticias as $noticia)
+            <x-tarjeta 
+                :imagen="$noticia->imagen"
+                :titulo="$noticia->titulo"
+                :descripcion="$noticia->descripcion"
+            />
+        @endforeach
+    </div>
 </div>
+
 @endsection

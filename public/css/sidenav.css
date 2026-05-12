@@ -1,256 +1,618 @@
-:root {
-    --uady-azul: #0B3C5D;
-    --uady-dorado: #C89B3C;
-    --white: #ffffff;
-    --light-gray: #f8f9fa;
-    --text-color: #333333;
-    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+:root{
+    --uady-azul:#0B3C5D;
+    --uady-dorado:#C89B3C;
+    --white:#ffffff;
+    --light-gray:#f8f9fa;
+    --text-color:#333333;
+
+    --transition:
+    all .35s ease;
 }
 
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-/* ================= NAVBAR BASE ================= */
-.sidenav {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 132px;
-    z-index: 9999;
-    background: rgba(11, 60, 93, 0.95);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: var(--transition-smooth);
-    overflow: hidden;
+/* =========================================================
+   BODY
+========================================================= */
+
+body{
+    overflow-x:hidden;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-/* Contenedor de Imagen de Fondo Aleatoria */
-.nav-background-container {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    transition: var(--transition-smooth);
-    opacity: 0.35; /* Fondo más tenue para el header fijo */
+/* =========================================================
+   NAVBAR GENERAL
+========================================================= */
+
+.sidenav{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:9999;
+
+    background:
+    rgba(11,60,93,.95);
+
+    backdrop-filter:blur(10px);
+
+    transition:var(--transition);
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.15);
 }
 
-.nav-bg-image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.55) saturate(0.92);
+/* =========================================================
+   FONDO
+========================================================= */
+
+.nav-background-container{
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
 }
 
-.nav-bg-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(11, 60, 93, 0.35), rgba(11, 60, 93, 0.85));
+.nav-bg-image{
+    width:100%;
+    height:100%;
+
+    background-size:cover;
+    background-position:center;
+
+    filter:
+    brightness(.45)
+    saturate(.9);
+
+    transform:scale(1.05);
 }
 
-/* ================= CONTENEDOR Y TOPBAR ================= */
-.navbar-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.nav-bg-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(11,60,93,.3),
+        rgba(11,60,93,.92)
+    );
 }
 
-.topbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 0;
-    transition: var(--transition-smooth);
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+.navbar-container{
+    width:100%;
+    max-width:1280px;
+
+    margin:auto;
+
+    padding:
+    0 25px;
 }
 
-.top-left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar{
+    min-height:92px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+
+    transition:var(--transition);
 }
 
-.img-logo {
-    height: 75px;
-    transition: var(--transition-smooth);
+/* =========================================================
+   LEFT
+========================================================= */
+
+.top-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    min-width:0;
 }
 
-.branding-block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.logo-link{
+    flex-shrink:0;
 }
 
-.facultad-top {
-    color: var(--white);
-    font-size: 18px;
-    font-weight: 700;
-    text-decoration: none;
-    line-height: 1.2;
+.img-logo{
+    height:72px;
+    transition:var(--transition);
 }
 
-.brand-divider {
-    width: 100%;
-    height: 2px;
-    background: var(--uady-dorado);
-    margin: 6px 0;
+.branding-block{
+    display:flex;
+    flex-direction:column;
+
+    min-width:0;
 }
 
-.brand-subtitle {
-    color: var(--white);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+.facultad-top{
+    color:white;
+    text-decoration:none;
+
+    font-size:1.15rem;
+    font-weight:700;
+    line-height:1.2;
 }
 
-/* ================= DERECHA: BUSCADOR E ICONOS ================= */
-.top-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.brand-divider{
+    width:100%;
+    height:2px;
+
+    background:var(--uady-dorado);
+
+    margin:6px 0;
 }
 
-.search-box {
-    position: relative;
+.brand-subtitle{
+    color:white;
+
+    font-size:.70rem;
+    font-weight:700;
+
+    letter-spacing:.25em;
 }
 
-.search-box input {
-    padding: 8px 30px 8px 12px;
-    border-radius: 20px;
-    border: 1px solid #ced4da;
-    background: var(--light-gray);
-    width: 150px;
-    transition: var(--transition-smooth);
-    font-size: 13px;
+/* =========================================================
+   RIGHT
+========================================================= */
+
+.top-right{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+
+    gap:18px;
+
+    flex-wrap:nowrap;
 }
 
-.search-box input:focus {
-    width: 220px;
-    border-color: var(--uady-azul);
-    outline: none;
-    background: var(--white);
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box{
+    position:relative;
 }
 
-.search-box i {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 14px;
-    color: #6c757d;
+.search-box input{
+    width:170px;
+
+    border:none;
+    outline:none;
+
+    border-radius:30px;
+
+    background:white;
+
+    padding:
+    10px 40px 10px 16px;
+
+    transition:var(--transition);
 }
 
-.aux-items {
-    display: flex;
-    gap: 15px;
-    align-items: center;
+.search-box input:focus{
+    width:240px;
 }
 
-.top-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 11px;
-    color: var(--white);
-    text-decoration: none;
-    transition: var(--transition-smooth);
+.search-box i{
+    position:absolute;
+
+    right:15px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#666;
 }
 
-.top-item i {
-    font-size: 20px;
-    margin-bottom: 2px;
+/* =========================================================
+   AUX ITEMS
+========================================================= */
+
+.aux-items{
+    display:flex;
+    align-items:center;
+    gap:16px;
 }
 
-.top-item:hover {
-    color: var(--uady-dorado);
-    transform: translateY(-2px);
+.top-item{
+    text-decoration:none;
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    transition:var(--transition);
+
+    font-size:.72rem;
 }
 
-/* ================= MENU DE NAVEGACIÓN ================= */
-.menu {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 10px 0;
-    background: var(--uady-dorado);
-    transition: var(--transition-smooth);
+.top-item i{
+    font-size:1.2rem;
+    margin-bottom:3px;
 }
 
-.menu a {
-    position: relative;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--uady-azul);
-    transition: 0.3s;
+.top-item:hover{
+    color:var(--uady-dorado);
+    transform:translateY(-2px);
 }
 
-.menu a:hover, .menu a.active {
-    color: var(--white);
+/* =========================================================
+   MENU DESKTOP
+========================================================= */
+
+.menu{
+    width:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:28px;
+
+    background:var(--uady-dorado);
+
+    padding:
+    13px 20px;
 }
 
-.menu a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -3px;
-    width: 0%;
-    height: 2px;
-    background: var(--white);
-    transform: translateX(-50%);
-    transition: 0.3s;
+.menu a{
+    position:relative;
+
+    text-decoration:none;
+
+    color:var(--uady-azul);
+
+    font-weight:700;
+    font-size:.92rem;
+
+    transition:var(--transition);
+
+    white-space:nowrap;
 }
 
-.menu a:hover::after, .menu a.active::after {
-    width: 100%;
+.menu a:hover,
+.menu a.active{
+    color:white;
 }
 
-/* ================= EFECTO SCROLL (ACHICAR) ================= */
-.sidenav.scrolled {
-    background: rgba(11, 60, 93, 0.98);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+.menu a::after{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:-4px;
+
+    width:0;
+    height:2px;
+
+    background:white;
+
+    transform:translateX(-50%);
+
+    transition:var(--transition);
 }
 
-.sidenav.scrolled .nav-background-container {
-    opacity: 0.2;
+.menu a:hover::after,
+.menu a.active::after{
+    width:100%;
 }
 
-.sidenav.scrolled .img-logo {
-    height: 56px;
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.sidenav.scrolled{
+    background:
+    rgba(11,60,93,.98);
 }
 
-.sidenav.scrolled .topbar {
-    padding: 10px 0;
+.sidenav.scrolled .img-logo{
+    height:58px;
 }
 
-.sidenav.scrolled .menu {
-    padding: 8px 0;
+.sidenav.scrolled .topbar{
+    min-height:78px;
 }
 
-/* Hamburguesa */
-.menu-toggle {
-    cursor: pointer;
-    font-size: 24px;
-    color: var(--uady-azul);
-    display: none;
+/* =========================================================
+   TOGGLE
+========================================================= */
+
+.menu-toggle{
+    display:none;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+    border-radius:10px;
+
+    background:var(--uady-dorado);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+
+    transition:var(--transition);
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 992px) {
-    .aux-items, .menu { display: none; }
-    .menu-toggle { display: block; }
+.menu-toggle:hover{
+    transform:scale(1.05);
+}
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-section{
+    position:fixed;
+
+    top:0;
+    right:-340px;
+
+    width:320px;
+    max-width:90vw;
+
+    height:100vh;
+
+    background:white;
+
+    z-index:10001;
+
+    transition:.4s ease;
+
+    display:flex;
+    flex-direction:column;
+
+    box-shadow:
+    -5px 0 20px rgba(0,0,0,.15);
+}
+
+.menu-section.active{
+    right:0;
+}
+
+.mobile-header{
+    height:80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 25px;
+
+    background:var(--uady-azul);
+
+    color:white;
+
+    font-weight:700;
+}
+
+.mobile-header button{
+    background:none;
+    border:none;
+
+    color:white;
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+}
+
+.mobile-links{
+    display:flex;
+    flex-direction:column;
+}
+
+.menu-item{
+    padding:18px 25px;
+
+    text-decoration:none;
+
+    color:var(--uady-azul);
+
+    border-bottom:
+    1px solid rgba(0,0,0,.08);
+
+    font-weight:600;
+
+    transition:var(--transition);
+}
+
+.menu-item:hover,
+.menu-item.active{
+    background:
+    rgba(200,155,60,.12);
+
+    color:var(--uady-dorado);
+}
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.menu-overlay{
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.5);
+
+    z-index:10000;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:var(--transition);
+}
+
+.menu-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.content{
+    padding-top:145px;
+}
+
+@media(max-width:1200px){
+
+    .menu{
+        gap:18px;
+    }
+
+    .menu a{
+        font-size:.85rem;
+    }
+
+    .search-box input{
+        width:140px;
+    }
+
+}
+
+
+@media(max-width:992px){
+
+    .aux-items{
+        display:none;
+    }
+
+    .search-box input{
+        width:130px;
+    }
+
+    .menu{
+        gap:14px;
+    }
+
+    .menu a{
+        font-size:.80rem;
+    }
+
+}
+
+
+@media(max-width:860px){
+
+    .menu{
+        display:none;
+    }
+
+    .menu-toggle{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .search-box{
+        display:none;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .content{
+        padding-top:110px;
+    }
+
+    .navbar-container{
+        padding:0 18px;
+    }
+
+    .topbar{
+        min-height:82px;
+    }
+
+    .img-logo{
+        height:58px;
+    }
+
+    .facultad-top{
+        font-size:.98rem;
+    }
+
+    .brand-subtitle{
+        font-size:.58rem;
+    }
+
+}
+
+
+@media(max-width:580px){
+
+    .topbar{
+        min-height:74px;
+    }
+
+    .img-logo{
+        height:50px;
+    }
+
+    .facultad-top{
+        font-size:.83rem;
+    }
+
+    .brand-subtitle{
+        display:none;
+    }
+
+    .brand-divider{
+        margin:4px 0;
+    }
+
+    .menu-section{
+        width:100%;
+        max-width:100%;
+    }
+
+}
+
+@media(max-width:430px){
+
+    .navbar-container{
+        padding:0 12px;
+    }
+
+    .top-left{
+        gap:10px;
+    }
+
+    .img-logo{
+        height:45px;
+    }
+
+    .facultad-top{
+        font-size:.74rem;
+    }
+
 }

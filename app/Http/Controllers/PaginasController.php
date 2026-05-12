@@ -11,7 +11,7 @@ class PaginasController extends Controller
         $categories = [
             'Profesores de Tiempo Completo',
             'Profesores de Medio Tiempo',
-            'Coordinador del Programa Institucional de Inglés para FCA',
+            'Coordinadores del Programa Institucional de Inglés para FCA',
             'Profesores por Asignatura',
         ];
 

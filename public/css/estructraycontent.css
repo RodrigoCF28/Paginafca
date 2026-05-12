@@ -1,177 +1,358 @@
-/* --- VARIABLES DE COLOR --- */
+/* =========================================================
+   VARIABLES
+========================================================= */
+
 :root {
-    --uady-azul: #0B3C5D;      
-    --uady-dorado: #C89B3C;    
-    --uady-dorado-hover: #e3b655;
-    --fondo-claro: #f6f5f0;    
-    --texto-principal: #333333;
-    --texto-secundario: #666666;
+
+    --uady-azul:#0B3C5D;
+    --uady-dorado:#C89B3C;
+    --uady-dorado-hover:#e3b655;
+
+    --fondo-claro:#f6f5f0;
+
+    --texto-principal:#333333;
+    --texto-secundario:#666666;
+
 }
 
-/* 🔥 RESETEO GLOBAL (Soluciona la línea blanca izquierda) */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    padding-top: 0;
-    overflow-x: hidden;
-    font-family: Arial, sans-serif; /* Un fallback básico */
+body{
+    overflow-x:hidden;
+    font-family:Arial, sans-serif;
+    background:white;
 }
 
-/* estructura principal */
+/* =========================================================
+   MAIN
+========================================================= */
+
 .main{
     min-height:100vh;
     display:flex;
     flex-direction:column;
 }
 
-/* contenedor del contenido */
-.content {
-    flex: 1;
-    /* Ajusta el padding según prefieras el espaciado interno */
-    padding: 130px 40px 30px;
-    background-color: white;
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content{
+
+    flex:1;
+
+    padding:145px 0 30px;
+
+    background:#f5f5f5;
+
 }
 
-/* --- INICIO.BLADE.PHP ESTILOS --- */
+.content > *{
 
-/* 🔥 Arreglo para centrar la imagen Hero (debajo del menú) */
-.img-inicio {
-    display: block; /* Necesario para centrar con margin auto */
-    max-width: 100%; /* No se sale de la pantalla */
-    height: auto; /* Mantiene proporción */
-    margin: 0 auto 30px auto; /* Centrado horizontal (auto izquierda/derecha) y separación abajo */
-    border-radius: 8px; /* Opcional: bordes suaves como las tarjetas */
-    animation: fadeInDown 0.7s ease-out;
+    max-width:1400px;
+
+    margin-left:auto;
+    margin-right:auto;
+
 }
 
-/* galeria */
-.galeria {
-    display: grid;
-    /* Responsive automático */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px;
-    margin-bottom: 50px; /* Separación con el carrusel */
+.contenedor-inicio{
+
+    max-width:1400px;
+    margin-left:auto;
+    margin-right:auto;
+    padding:0 20px;
+
 }
 
-/* Animación de entrada para cards */
-.galeria > * {
-    animation: slideInUp 0.6s ease-out forwards;
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.img-inicio{
+
+    display:block;
+
+    width:100%;
+    max-width:1400px;
+
+    height:auto;
+
+    max-height:520px;
+
+    object-fit:cover;
+
+    margin:
+    0 auto 30px auto;
+
+    border-radius:10px;
+
 }
 
-.galeria > :nth-child(1) { animation-delay: 0.1s; }
-.galeria > :nth-child(2) { animation-delay: 0.2s; }
-.galeria > :nth-child(3) { animation-delay: 0.3s; }
-.galeria > :nth-child(4) { animation-delay: 0.4s; }
-.galeria > :nth-child(5) { animation-delay: 0.5s; }
-.galeria > :nth-child(6) { animation-delay: 0.6s; }
+/* =========================================================
+   GALERIA
+========================================================= */
 
-/* Carrusel */
+.galeria{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+    margin-bottom:50px;
+
+}
+
+.galeria > *{
+
+    animation:
+    slideInUp .6s ease-out forwards;
+
+}
+
+.galeria > :nth-child(1){
+    animation-delay:.1s;
+}
+
+.galeria > :nth-child(2){
+    animation-delay:.2s;
+}
+
+.galeria > :nth-child(3){
+    animation-delay:.3s;
+}
+
+.galeria > :nth-child(4){
+    animation-delay:.4s;
+}
+
+.galeria > :nth-child(5){
+    animation-delay:.5s;
+}
+
+.galeria > :nth-child(6){
+    animation-delay:.6s;
+}
+
+/* =========================================================
+   CARRUSEL
+========================================================= */
+
 .carrusel{
-    width: 100%;
-    /* 🔥 CORRECCIÓN: Le damos altura real (puedes ajustar este valor) */
-    height: 450px; 
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 30px;
-    border-radius: 8px; /* Opcional */
+
+    width:100%;
+
+    height:420px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    margin-bottom:50px;
+
+    border-radius:12px;
+
+    box-shadow:0 8px 24px rgba(0,0,0,0.12);
+
 }
 
 .slide{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out; /* Transición más suave */
-    z-index: 1;
-}
 
-/* ================= KEYFRAMES ANIMACIONES ================= */
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+    position:absolute;
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+    top:0;
+    left:0;
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    width:100%;
+    height:100%;
+
+    opacity:0;
+
+    transition:opacity 1s ease-in-out;
+
+    z-index:1;
+
 }
 
 .slide img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Evita que se deforme */
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
 }
 
-/* Clase para mostrar el slide activo */
 .slide.active{
-    opacity: 1;
-    z-index: 2; /* Se pone al frente */
+
+    opacity:1;
+
+    z-index:2;
+
 }
 
-/* --- OTROS ELEMENTOS --- */
+/* =========================================================
+   FLECHA
+========================================================= */
 
 .flecha-scroll{
-    margin-top: 50px;
-    font-size: 30px;
-    color: var(--uady-dorado);
-    cursor: pointer;
-    animation: bounce 1.5s infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.8;
-    transition: all 0.3s ease;
+
+    margin-top:50px;
+
+    font-size:30px;
+
+    color:var(--uady-dorado);
+
+    cursor:pointer;
+
+    animation:
+    bounce 1.5s infinite;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:.8;
+
+    transition:.3s ease;
+
 }
 
 .flecha-scroll:hover{
-    opacity: 1;
-    transform: scale(1.1); /* Ligero aumento en hover */
+
+    opacity:1;
+
+    transform:scale(1.1);
+
 }
 
-/* animación */
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
+/* =========================================================
+   ANIMACIONES
+========================================================= */
+
+@keyframes slideInUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
 }
 
-/* responsive */
-@media (max-width:768px){
+@keyframes fadeInDown{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(-20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(6px);
+    }
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:992px){
+
     .content{
-        padding: 20px; /* Menos padding en móvil */
+        padding:145px 30px 30px;
+    }
+
+    .carrusel{
+        height:360px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .content{
+        padding:110px 20px 20px;
     }
 
     .galeria{
-        grid-template-columns: 1fr; /* Una columna en móvil */
+        grid-template-columns:1fr;
     }
 
-    .carrusel {
-        height: 250px; /* Carrusel más bajo en móvil */
+    .carrusel{
+        height:280px;
     }
+
+}
+
+@media(max-width:480px){
+
+    .content{
+        padding:100px 14px 18px;
+    }
+
+    .carrusel{
+        height:200px;
+        border-radius:8px;
+        margin-bottom:30px;
+    }
+
 }

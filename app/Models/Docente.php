@@ -12,7 +12,7 @@ class Docente extends Model
     protected $fillable = [
         'nombre',
         'correo',
-        'telefono',
+        'grado_academico',
         'foto'
     ];
 }

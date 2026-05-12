@@ -15,7 +15,7 @@ public function up(): void
         $table->id();
         $table->string('nombre');
         $table->string('correo')->unique();
-        $table->string('telefono');
+        $table->string('grado_academico');
         $table->string('foto')->nullable();
         $table->timestamps();
     });

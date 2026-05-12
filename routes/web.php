@@ -2,8 +2,10 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\NoticiaController;
-
-Route::get('/', [NoticiaController::class, 'index']);
+use App\Http\Controllers\PaginasController;
 use App\Models\Docente;
 
-Route::get('/docentes', function () { $docentes = Docente::all();return view('docentes', compact('docentes')); });
+Route::get('/', [NoticiaController::class, 'index']);
+Route::get('/docentes', [PaginasController::class, 'docentes']);
+Route::get('/egresados', [PaginasController::class, 'egresados']);
+Route::get('/facultad', [PaginasController::class, 'facultad']);

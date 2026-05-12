@@ -16,10 +16,17 @@ class DocenteFactory extends Factory
      */
     public function definition(): array
     {
-    return [
-        'nombre' => $this->faker->name(),
-        'correo' => $this->faker->unique()->safeEmail(),
-        'telefono' => $this->faker->phoneNumber(),
-        'foto' => 'https://randomuser.me/api/portraits/' . (rand(0,1) ? 'men' : 'women') . '/' . rand(1, 99) . '.jpg',    ];
+        $grados = ['Mtro.', 'Dr.', 'Ing.', 'Lic.'];
+
+        $genero = fake()->randomElement(['men', 'women']);
+        $numero = fake()->numberBetween(1, 99);
+
+        return [
+            'nombre' => fake()->name(),
+            'correo' => fake()->unique()->safeEmail(),
+            'grado_academico' => fake()->randomElement($grados),
+
+            'foto' => "https://randomuser.me/api/portraits/{$genero}/{$numero}.jpg",
+        ];
     }
 }

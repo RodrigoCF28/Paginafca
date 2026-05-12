@@ -1,113 +1,256 @@
-.sidenav {
-    height: 100%;
-    width: 250px;
+:root {
+    --uady-azul: #0B3C5D;
+    --uady-dorado: #C89B3C;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --text-color: #333333;
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+* {
+    box-sizing: border-box;
+}
+
+/* ================= NAVBAR BASE ================= */
+.sidenav {
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-
-    background-image: url('images/fondo.png');
-    background-size: cover;
-    background-position: center;
-    overflow-y: auto; /* 🔥 permite scroll vertical */
+    right: 0;
+    height: 132px;
+    z-index: 9999;
+    background: rgba(11, 60, 93, 0.95);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     display: flex;
     flex-direction: column;
-    align-items: center; /* 🔥 CENTRA TODO */
+    align-items: center;
+    transition: var(--transition-smooth);
+    overflow: hidden;
 }
-.img-inicio{
+
+/* Contenedor de Imagen de Fondo Aleatoria */
+.nav-background-container {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transition: var(--transition-smooth);
+    opacity: 0.35; /* Fondo más tenue para el header fijo */
+}
+
+.nav-bg-image {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
-
-    border-radius: 10px;
-
-    margin-bottom: 25px;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.55) saturate(0.92);
 }
-.img-logo{
-    width:80%;
-    height:180px;
-    object-fit:contain;
 
-    margin:60px auto 10px auto; /* 🔥 centrado real */
+.nav-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(11, 60, 93, 0.35), rgba(11, 60, 93, 0.85));
+}
 
-    display:block;
+/* ================= CONTENEDOR Y TOPBAR ================= */
+.navbar-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     position: relative;
     z-index: 2;
-}
-.sidenav a {
-    color: white;
-    padding: 15px 20px;
-    text-decoration: none;
-    display: block;
-    width: 100%; /* Que ocupe todo el ancho */
-    box-sizing: border-box;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border-left: 4px solid transparent; /* Preparado para el hover */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.sidenav a:hover, 
-.sidenav a.active {
-    /* Difuminado de transparente (izq) a dorado translúcido (der) */
-    background: linear-gradient(90deg, transparent 0%, rgba(200, 155, 60, 0.4) 100%);
-    border-right: 4px solid var(--uady-dorado);
-    color: var(--uady-dorado);
-}
-
-.lema {
+.topbar {
     width: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    transition: var(--transition-smooth);
+}
 
-    color: var(--uady-dorado);
-    font-style: italic;
-    font-family: "Georgia", serif;
+.top-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
+.img-logo {
+    height: 75px;
+    transition: var(--transition-smooth);
+}
+
+.branding-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.facultad-top {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1.2;
+}
+
+.brand-divider {
+    width: 100%;
+    height: 2px;
+    background: var(--uady-dorado);
+    margin: 6px 0;
+}
+
+.brand-subtitle {
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+/* ================= DERECHA: BUSCADOR E ICONOS ================= */
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    padding: 8px 30px 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ced4da;
+    background: var(--light-gray);
+    width: 150px;
+    transition: var(--transition-smooth);
     font-size: 13px;
-    letter-spacing: 1px;
-
-    margin-bottom: 30px;
-
-    
 }
-.lema::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 5px; /* Alto necesario para dibujar el punto */
-    margin: 15px auto 0;
-    /* Dibujamos: linea izq, punto central, linea der */
-    background:
-        linear-gradient(var(--uady-dorado), var(--uady-dorado)) left center / 22px 1px no-repeat,
-        radial-gradient(circle, var(--uady-dorado) 2px, transparent 2.5px) center / 5px 5px no-repeat,
-        linear-gradient(var(--uady-dorado), var(--uady-dorado)) right center / 22px 1px no-repeat;
-    opacity: 0.8;
+
+.search-box input:focus {
+    width: 220px;
+    border-color: var(--uady-azul);
+    outline: none;
+    background: var(--white);
 }
-.sidenav::before{
+
+.search-box i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.aux-items {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.top-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.top-item i {
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+.top-item:hover {
+    color: var(--uady-dorado);
+    transform: translateY(-2px);
+}
+
+/* ================= MENU DE NAVEGACIÓN ================= */
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+    background: var(--uady-dorado);
+    transition: var(--transition-smooth);
+}
+
+.menu a {
+    position: relative;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--uady-azul);
+    transition: 0.3s;
+}
+
+.menu a:hover, .menu a.active {
+    color: var(--white);
+}
+
+.menu a::after {
     content: "";
     position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: var(--white);
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
 
-    top: 0;
-    left: 0;
+.menu a:hover::after, .menu a.active::after {
     width: 100%;
-    height: 300px;
-
-    background: radial-gradient(
-        circle at center,
-        rgba(200,155,60,0.5) 0%,
-        rgba(200,155,60,0.2) 40%,
-        transparent 80%
-    );
-
-    filter: blur(5px); /* 🔥 efecto difuminado */
-    z-index: 1;
-}
-.sidenav::-webkit-scrollbar {
-    width: 5px;
 }
 
-.sidenav::-webkit-scrollbar-thumb {
-    background: rgba(200,155,60,0.5);
-    border-radius: 10px;
+/* ================= EFECTO SCROLL (ACHICAR) ================= */
+.sidenav.scrolled {
+    background: rgba(11, 60, 93, 0.98);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.sidenav.scrolled .nav-background-container {
+    opacity: 0.2;
+}
+
+.sidenav.scrolled .img-logo {
+    height: 56px;
+}
+
+.sidenav.scrolled .topbar {
+    padding: 10px 0;
+}
+
+.sidenav.scrolled .menu {
+    padding: 8px 0;
+}
+
+/* Hamburguesa */
+.menu-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--uady-azul);
+    display: none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .aux-items, .menu { display: none; }
+    .menu-toggle { display: block; }
 }

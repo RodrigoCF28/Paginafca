@@ -8,12 +8,22 @@ use Illuminate\View\Component;
 
 class Header extends Component
 {
+    public string $backgroundImage;
+
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
-        //
+        $images = [
+            'fondo.png',
+            'fondo1.png',
+            'fondo2.png',
+            'fondo3.png',
+            'imagen.png',
+        ];
+
+        $this->backgroundImage = asset('img/' . $images[array_rand($images)]);
     }
 
     /**

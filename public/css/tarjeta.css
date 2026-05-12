@@ -56,3 +56,220 @@
     background-color: var(--uady-dorado-hover);
     color: white;
 }
+
+.card-docente {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border-bottom: 4px solid var(--uady-azul); /* Detalle elegante abajo */
+}
+
+.card-docente:hover {
+    transform: translateY(-10px); /* Efecto de levante */
+    border-bottom-color: var(--uady-dorado);
+}
+
+.foto-docente {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Foto circular */
+    object-fit: cover;
+    border: 3px solid var(--uady-dorado);
+    margin-bottom: 15px;
+}
+
+/* Estilos para el Directorio de Docentes */
+
+.docentes-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px 20px 20px;
+    background-color: #f8f9fa;
+    margin-bottom: 24px;
+}
+
+.docentes-header > div:first-child {
+    flex: 1 1 380px;
+}
+
+.docentes-header h1 {
+    color: var(--uady-azul);
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+}
+
+.docentes-header p {
+    color: #4d5a6f;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.docentes-search {
+    flex: 0 0 360px;
+    width: 100%;
+}
+
+.docentes-search input {
+    width: 100%;
+    padding: 16px 22px;
+    border-radius: 16px;
+    border: 1px solid #ced4da;
+    background: #fff;
+    font-size: 1rem;
+    color: var(--text-color);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.docentes-search input::placeholder {
+    color: #8a98ae;
+}
+
+.docentes-search input:focus {
+    outline: none;
+    border-color: var(--uady-azul);
+    box-shadow: 0 0 0 5px rgba(11,60,93,0.1);
+}
+
+.uady-divider {
+    height: 4px;
+    width: 60px;
+    background-color: var(--uady-dorado);
+    margin: 20px 0 0;
+}
+
+.contenedor-docentes {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+}
+
+.docente-group {
+    margin-bottom: 42px;
+}
+
+.group-title {
+    color: var(--uady-azul);
+    font-size: 1.65rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.no-results {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 22px 24px;
+    border-radius: 18px;
+    background: #fff8e5;
+    color: #5d4300;
+    text-align: center;
+    font-weight: 700;
+    box-shadow: 0 12px 30px rgba(200,155,60,0.12);
+}
+
+.galeria-docentes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.tarjeta-docente {
+    position: relative;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(222, 222, 222, 0.9);
+    display: flex;
+    flex-direction: column;
+    min-height: 430px;
+}
+
+.tarjeta-docente:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.14);
+    border-color: rgba(200, 155, 60, 0.35);
+    z-index: 2;
+}
+
+.foto-container {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.foto-container img{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.tarjeta-docente img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    outline: 2px solid var(--uady-dorado);
+}
+
+.info-docente {
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 auto;
+    min-height: 170px;
+}
+
+.info-docente h3 {
+    color: var(--uady-azul);
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+    min-height: 56px;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #4d5a6f;
+    font-size: 0.95rem;
+}
+
+.contacto-item i {
+    color: var(--uady-dorado);
+}
+
+.tarjeta-footer {
+    padding: 20px;
+    background: #fcfcfc;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+}
+
+.btn-perfil {
+    display: block;
+    text-align: center;
+    background: var(--uady-azul);
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn-perfil:hover {
+    background: #002244;
+    transform: translateY(-2px);
+}

@@ -3,18 +3,8 @@
 @section('contenido')
 
 <div class="contenedor-inicio">
-    <!-- CARRUSEL COMO BANNER PRINCIPAL -->
-    <div class="carrusel">
-        @forelse($carruseles as $item)
-            <div class="slide">
-                <img src="{{ asset($item->imagen) }}" alt="{{ $item->titulo }}">
-            </div>
-        @empty
-            <div class="slide active">
-                <img src="{{ asset('images/fondo.png') }}" alt="Banner Principal">
-            </div>
-        @endforelse
-    </div>
+    <!-- IMAGEN ESTÁTICA PRINCIPAL -->
+    <img src="{{ asset('images/fondo.png') }}" alt="Banner Principal" class="img-inicio">
 
     <!-- GALERÍA DE NOTICIAS -->
     <div class="galeria">
@@ -25,6 +15,19 @@
                 :descripcion="$noticia->descripcion"
             />
         @endforeach
+    </div>
+
+    <!-- CARRUSEL -->
+    <div class="carrusel">
+        @forelse($carruseles as $item)
+            <div class="slide">
+                <img src="{{ asset($item->imagen) }}" alt="{{ $item->titulo }}">
+            </div>
+        @empty
+            <div class="slide active">
+                <img src="{{ asset('images/fondo.png') }}" alt="Carrusel">
+            </div>
+        @endforelse
     </div>
 </div>
 

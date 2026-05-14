@@ -15,7 +15,7 @@
 
         <h1>
             Celebrando a nuestros
-            <span>Egresados FCA</span>
+            <span>Egresados FCA 2026</span>
         </h1>
 
         <p>

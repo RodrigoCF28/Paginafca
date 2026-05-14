@@ -89,20 +89,19 @@
         <!-- ================= MENU DESKTOP ================= -->
         <nav class="menu">
 
-            <a href="/docentes"
-               class="{{ request()->is('docentes') ? 'active' : '' }}">
-                Docentes
-            </a>
-
-            <a href="/egresados"
-               class="{{ request()->is('egresados') ? 'active' : '' }}">
-                Egresados
-            </a>
-
-            <a href="/facultad"
-               class="{{ request()->is('facultad') ? 'active' : '' }}">
-                Nuestra Facultad
-            </a>
+            <div class="menu-item-wrapper dropdown">
+                <a href="/facultad"
+                   class="menu-link {{ request()->is('facultad') ? 'active' : '' }}"
+                   data-toggle="dropdown">
+                    Nuestra Facultad
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="/facultad">Nuestra Facultad</a>
+                    <a href="/docentes">Docentes</a>
+                    <a href="/egresados">Egresados</a>
+                </div>
+            </div>
 
             <a href="/oferta"
                class="{{ request()->is('oferta') ? 'active' : '' }}">
@@ -143,20 +142,19 @@
 
         <nav class="mobile-links">
 
-            <a href="/docentes"
-               class="menu-item {{ request()->is('docentes') ? 'active' : '' }}">
-                Docentes
-            </a>
-
-            <a href="/egresados"
-               class="menu-item {{ request()->is('egresados') ? 'active' : '' }}">
-                Egresados
-            </a>
-
-            <a href="/facultad"
-               class="menu-item {{ request()->is('facultad') ? 'active' : '' }}">
-                Nuestra Facultad
-            </a>
+            <div class="menu-item-wrapper dropdown-mobile">
+                <a href="/facultad"
+                   class="menu-item {{ request()->is('facultad') ? 'active' : '' }}"
+                   data-toggle="dropdown-mobile">
+                    Nuestra Facultad
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu-mobile">
+                    <a href="/facultad" class="menu-item">Nuestra Facultad</a>
+                    <a href="/docentes" class="menu-item">Docentes</a>
+                    <a href="/egresados" class="menu-item">Egresados</a>
+                </div>
+            </div>
 
             <a href="/oferta"
                class="menu-item {{ request()->is('oferta') ? 'active' : '' }}">

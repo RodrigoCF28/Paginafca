@@ -24,6 +24,7 @@
     </div>
 
     <x-footer />
+    
 
 </div> <script>
     document.addEventListener("DOMContentLoaded", function () {

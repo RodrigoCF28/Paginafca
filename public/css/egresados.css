@@ -11,6 +11,21 @@
 }
 
 /* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes cardSlideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
    HERO
 ========================================================= */
 
@@ -233,6 +248,10 @@
     gap: 28px;
 }
 
+.egresados-cards-container > .egresados-card:nth-child(1) { animation-delay: 0.1s; }
+.egresados-cards-container > .egresados-card:nth-child(2) { animation-delay: 0.2s; }
+.egresados-cards-container > .egresados-card:nth-child(3) { animation-delay: 0.3s; }
+
 .egresados-card{
 
     position: relative;
@@ -255,6 +274,8 @@
         transform .35s ease,
         box-shadow .35s ease,
         border-color .35s ease;
+
+    animation: cardSlideInUp 0.6s ease forwards;
 }
 
 .egresados-card:hover{

@@ -1062,30 +1062,39 @@
 
     position: absolute;
 
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
 
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    padding: 10px 18px;
+    margin: 0;
+    padding: 16px 0;
 
-    border-radius: 999px;
+    border-radius: 0 0 24px 24px;
 
-    background: rgba(5,20,35,.9);
+    background: rgba(5,20,35,.95);
 
     backdrop-filter: blur(12px);
 
-    font-size: .85rem;
+    font-size: .95rem;
 
-    letter-spacing: 1px;
+    letter-spacing: 0.12em;
 
     text-transform: uppercase;
 
+    text-align: center;
+
     color: white;
 
-    z-index: 8;
+    z-index: 9;
+    box-sizing: border-box;
 }
+
+
 
 .directory-content h3{
 

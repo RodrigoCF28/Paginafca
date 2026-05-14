@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{ asset('css/sidenav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/tarjeta.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estructraycontent.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/egresados.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/facultad.css') }}">
 
 </head>
 

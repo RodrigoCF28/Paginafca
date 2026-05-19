@@ -11,3 +11,6 @@ Route::get('/docentes', [PaginasController::class, 'docentes']);
 Route::get('/egresados', [PaginasController::class, 'egresados']);
 Route::get('/facultad', [PaginasController::class, 'facultad']);
 Route::get('/egresados', [GraduateController::class, 'index']);
+Route::get('/oferta-educativa', [PaginasController::class, 'ofertaEducativa'])->name('oferta-educativa');
+Route::get('/vinculacion', [PaginasController::class, 'vinculacion'])->name('vinculacion');
+Route::get('/internacionalizacion', [PaginasController::class, 'internacionalizacion'])->name('internacionalizacion');

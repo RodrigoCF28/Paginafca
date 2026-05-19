@@ -55,12 +55,13 @@ body{
 
 }
 
-.content > *{
+.content > *:not(.hero-inicio):not(.facultad-hero):not(.facultad-about):not(.facultad-history):not(.facultad-directory):not(.facultad-plan):not(.facultad-organization):not(.egresados-hero):not(.egresados-about):not(.egresados-cards-section):not(.egresados-collage-section):not(.graduates-showcase):not(.graduates-cta):not(.stories-section):not(.community-section):not(.contenido):not(.doc-hero):not(.doc-tabs-wrap):not(.doc-content)
+:not(.oe-hero):not(.oe-section):not(.oe-cta){
+    max-width: 1400px;   
+     max-width: 1400px;
 
-    max-width:1400px;
-
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -76,24 +77,263 @@ body{
 /* =========================================================
    HERO IMAGE
 ========================================================= */
+/* =========================================================
+   HERO CINEMATICO
+========================================================= */
 
-.img-inicio{
+.hero-inicio{
 
-    display:block;
+    position: relative;
 
-    width:100%;
-    max-width:1400px;
+    width: 100vw;
 
-    height:auto;
+    margin-left: calc(-50vw + 50%);
 
-    max-height:520px;
+    height: 72vh;
 
-    object-fit:cover;
+    min-height: 565px;
 
-    margin:20px auto 30px auto;
+    overflow: hidden;
 
-    border-radius:10px;
+    border-radius: 0;
 
+    margin-bottom: 60px;
+}
+
+/* =========================================================
+   FONDO
+========================================================= */
+
+.hero-bg{
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+
+    transform: scale(1.02);
+
+    animation:
+    heroZoom 14s ease forwards;
+}
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.hero-overlay{
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+    linear-gradient(
+        to right,
+        rgba(5,20,35,.82) 0%,
+        rgba(5,20,35,.45) 45%,
+        rgba(5,20,35,.10) 100%
+    );
+
+    z-index: 2;
+}
+
+/* =========================================================
+   FACULTAD PNG
+========================================================= */
+
+.hero-facultad{
+
+    position: absolute;
+
+    right: -19%;
+
+    bottom: 0;
+
+    width: 74%;
+
+    max-width: none;
+
+    height: auto;
+
+    object-fit: contain;
+
+    z-index: 4;
+
+    opacity: 0;
+
+    filter:
+        drop-shadow(0 30px 60px rgba(0,0,0,.35));
+
+    animation:
+        facultadReveal 1.8s ease forwards;
+
+    animation-delay: .4s;
+}
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.hero-content{
+
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 760px;
+
+    padding-top: 120px;
+
+    padding-left: 7%;
+
+    color: white;
+}
+
+/* =========================================================
+   TAG
+========================================================= */
+
+.hero-tag{
+
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.10);
+
+    backdrop-filter: blur(12px);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    font-size: .85rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    animation:
+        textReveal 1s ease forwards;
+}
+
+/* =========================================================
+   TITULO
+========================================================= */
+
+.hero-content h1{
+    max-width: 780px;
+
+     font-size: clamp(3rem, 5vw, 5.8rem);
+
+    line-height: .95;
+
+    margin: 28px 0;
+
+    font-weight: 800;
+
+    opacity: 0;
+
+    animation:
+        textReveal 1.2s ease forwards;
+
+    animation-delay: .5s;
+}
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.hero-content p{
+
+    max-width: 620px;
+
+    font-size: 1.2rem;
+
+    line-height: 1.9;
+
+    color: rgba(255,255,255,.88);
+
+    opacity: 0;
+
+    animation:
+        textReveal 1.2s ease forwards;
+
+    animation-delay: .9s;
+}
+
+/* =========================================================
+   ANIMACIONES
+========================================================= */
+
+@keyframes facultadReveal{
+
+    from{
+
+        opacity: 0;
+
+        transform:
+            translateY(75px)
+            scale(.96);
+    }
+
+    to{
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes textReveal{
+
+    from{
+
+        opacity: 0;
+
+        transform:
+            translateY(70px);
+
+        filter: blur(12px);
+    }
+
+    to{
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter: blur(0);
+    }
+}
+
+@keyframes heroZoom{
+
+    from{
+
+        transform: scale(1.02);
+    }
+
+    to{
+
+        transform: scale(1);
+    }
 }
 
 /* =========================================================

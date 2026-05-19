@@ -9,10 +9,12 @@ class Docente extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nombre',
-        'correo',
-        'grado_academico',
-        'foto'
-    ];
+protected $fillable = [
+    'nombre',
+    'correo',
+    'grado_academico',
+    'foto',
+    'categoria',
+    'linea_academica',
+];
 }

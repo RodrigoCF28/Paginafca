@@ -16,8 +16,13 @@ class Graduate extends Model
         'generacion',
         'cargo',
         'empresa',
+        'area',
         'descripcion',
+        'cita',
         'linkedin',
         'destacado'
     ];
+    protected $casts = [
+    'destacado' => 'boolean',
+];
 }

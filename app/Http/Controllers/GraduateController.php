@@ -6,17 +6,14 @@ use App\Models\Graduate;
 
 class GraduateController extends Controller
 {
-    public function index()
-    {
-        $graduates = Graduate::all();
+public function index()
+{
+    $historias = Graduate::where('destacado', true)->get();
 
-        $featured = Graduate::where('destacado', true)
-        ->take(8)
-        ->get();
+    $comunidad = Graduate::where('destacado', false)
+    ->orderBy('generacion', 'desc')
+    ->paginate(12);
 
-        return view('egresados', compact(
-            'graduates',
-            'featured'
-        ));
-    }
+    return view('egresados', compact('historias', 'comunidad'));
+}
 }

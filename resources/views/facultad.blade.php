@@ -66,7 +66,6 @@
 
 </section>
 
-
 {{-- =========================================================
    ACERCA DE NOSOTROS
 ========================================================= --}}
@@ -79,16 +78,16 @@
 
         <div class="facultad-about-content">
 
-            <span class="facultad-section-tag">
+            <span class="facultad-section-tag reveal">
                 Acerca de Nosotros
             </span>
 
-            <h2>
+            <h2 class="reveal">
                 Más de seis décadas impulsando
                 el conocimiento y liderazgo empresarial
             </h2>
 
-            <p class="facultad-about-intro">
+            <p class="facultad-about-intro reveal">
                 La Facultad de Contaduría y Administración forma
                 profesionales capaces de transformar organizaciones
                 mediante la innovación, la ética y la excelencia académica.
@@ -96,13 +95,14 @@
 
             {{-- BLOCKS --}}
 
-            <div class="facultad-about-block">
+            <div class="facultad-about-block reveal delay-1">
 
                 <div class="facultad-about-icon">
                     <i class="fas fa-bullseye"></i>
                 </div>
 
                 <div>
+
                     <h3>Misión</h3>
 
                     <p>
@@ -110,17 +110,19 @@
                         contable y administrativa con responsabilidad social,
                         liderazgo y compromiso ético.
                     </p>
+
                 </div>
 
             </div>
 
-            <div class="facultad-about-block">
+            <div class="facultad-about-block reveal delay-2">
 
                 <div class="facultad-about-icon">
                     <i class="fas fa-eye"></i>
                 </div>
 
                 <div>
+
                     <h3>Visión</h3>
 
                     <p>
@@ -128,23 +130,26 @@
                         superior, investigación e innovación en ciencias
                         económico-administrativas.
                     </p>
+
                 </div>
 
             </div>
 
-            <div class="facultad-about-block">
+            <div class="facultad-about-block reveal delay-3">
 
                 <div class="facultad-about-icon">
                     <i class="fas fa-gem"></i>
                 </div>
 
                 <div>
+
                     <h3>Valores</h3>
 
                     <p>
                         Ética, excelencia, inclusión, innovación,
                         compromiso social y trabajo colaborativo.
                     </p>
+
                 </div>
 
             </div>
@@ -153,7 +158,7 @@
 
         {{-- RIGHT VISUAL --}}
 
-        <div class="facultad-about-visual">
+        <div class="facultad-about-visual reveal">
 
             <div class="facultad-about-image">
 
@@ -164,16 +169,22 @@
 
             </div>
 
-            {{-- FLOATING CARD --}}
+            {{-- IMAGE CAPTION --}}
 
-            <div class="facultad-floating-card">
+            <div class="facultad-about-caption">
 
-                <h3>Luz, Ciencia y Verdad</h3>
+                <span class="facultad-caption-line"></span>
 
-                <p>
-                    Principios que inspiran la formación
-                    universitaria de la UADY.
-                </p>
+                <div>
+
+                    <h3>Luz, Ciencia y Verdad</h3>
+
+                    <p>
+                        Principios que inspiran la formación
+                        universitaria de la UADY.
+                    </p>
+
+                </div>
 
             </div>
 
@@ -182,120 +193,139 @@
     </div>
 
 </section>
-{{-- =========================================================
-   HISTORIA
-========================================================= --}}
 
 <section class="facultad-history" id="historia">
 
     <div class="facultad-history-heading">
-
-        <span class="facultad-section-tag">
-            Nuestra Historia
-        </span>
-
-        <h2>
-            Una trayectoria construida
-            con excelencia y visión
-        </h2>
-
-        <p>
-            Décadas de crecimiento académico, innovación
-            y compromiso con la sociedad yucateca.
-        </p>
-
+        <span class="facultad-section-tag">Nuestra Historia</span>
+        <h2>Una trayectoria construida<br>con excelencia y visión</h2>
+        <p>Décadas de crecimiento académico, innovación y compromiso con la sociedad yucateca.</p>
     </div>
 
-    <div class="facultad-timeline">
+    <div class="facultad-timeline-wrapper">
+        <div class="facultad-timeline-track">
+            <div class="facultad-timeline" id="facultadTimeline">
 
-        {{-- ITEM 1 --}}
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-particles">
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <span class="timeline-year">1964</span>
+                        <h3>Fundación de la Facultad</h3>
+                        <p>Inician las actividades académicas enfocadas en la formación de profesionales en contaduría y administración.</p>
+                    </div>
+                </div>
 
-        <div class="timeline-item left">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-particles">
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <span class="timeline-year">1972</span>
+                        <h3>Primera Generación de Egresados</h3>
+                        <p>La facultad consolida sus primeros programas y celebra la graduación de sus primeras generaciones.</p>
+                    </div>
+                </div>
 
-            <div class="timeline-content">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-particles">
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <span class="timeline-year">1982</span>
+                        <h3>Expansión Académica</h3>
+                        <p>Se fortalecen los programas educativos y la infraestructura institucional de la FCA.</p>
+                    </div>
+                </div>
 
-                <span class="timeline-year">
-                    1964
-                </span>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-particles">
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <span class="timeline-year">1995</span>
+                        <h3>Nuevos Programas de Posgrado</h3>
+                        <p>Incorporación de maestrías y especialidades para fortalecer la formación de alto nivel.</p>
+                    </div>
+                </div>
 
-                <h3>Fundación de la Facultad</h3>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-particles">
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <span class="timeline-year">2005</span>
+                        <h3>Acreditaciones Nacionales</h3>
+                        <p>Los programas obtienen reconocimientos de calidad académica a nivel nacional por organismos acreditadores.</p>
+                    </div>
+                </div>
 
-                <p>
-                    Inician las actividades académicas enfocadas
-                    en la formación de profesionales en contaduría
-                    y administración.
-                </p>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-particles">
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <span class="timeline-year">2012</span>
+                        <h3>Internacionalización</h3>
+                        <p>Se firman los primeros convenios internacionales y se inicia el programa de movilidad estudiantil.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-particles">
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <span class="timeline-year">2020</span>
+                        <h3>Transformación Digital</h3>
+                        <p>La FCA fortalece sus procesos tecnológicos y adopta modelos de educación digital e híbrida.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-particles">
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <span class="timeline-year">2024</span>
+                        <h3>60 Años de Excelencia</h3>
+                        <p>La Facultad celebra seis décadas formando líderes y profesionales comprometidos con Yucatán y México.</p>
+                    </div>
+                </div>
 
             </div>
-
         </div>
 
-        {{-- ITEM 2 --}}
-
-        <div class="timeline-item right">
-
-            <div class="timeline-content">
-
-                <span class="timeline-year">
-                    1982
-                </span>
-
-                <h3>Expansión Académica</h3>
-
-                <p>
-                    Se fortalecen los programas educativos
-                    y la infraestructura institucional.
-                </p>
-
-            </div>
-
+        <div class="timeline-controls">
+            <button class="timeline-btn" id="timelinePrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="timeline-progress" id="timelineProgress"></div>
+            <button class="timeline-btn" id="timelineNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
-
-        {{-- ITEM 3 --}}
-
-        <div class="timeline-item left">
-
-            <div class="timeline-content">
-
-                <span class="timeline-year">
-                    2005
-                </span>
-
-                <h3>Acreditaciones Nacionales</h3>
-
-                <p>
-                    Los programas obtienen reconocimientos
-                    de calidad académica a nivel nacional.
-                </p>
-
-            </div>
-
-        </div>
-
-        {{-- ITEM 4 --}}
-
-        <div class="timeline-item right">
-
-            <div class="timeline-content">
-
-                <span class="timeline-year">
-                    2020
-                </span>
-
-                <h3>Transformación Digital</h3>
-
-                <p>
-                    La FCA fortalece sus procesos tecnológicos
-                    y modelos de educación digital.
-                </p>
-
-            </div>
-
-        </div>
-
     </div>
 
 </section>
+
 
 {{-- =========================================================
    DIRECTORIO
@@ -305,16 +335,17 @@
 
     <div class="facultad-directory-heading">
 
-        <span class="facultad-section-tag">
+        <span class="facultad-section-tag reveal">
             Directorio
         </span>
 
-        <h2>
+      <h2 class="reveal delay-1">
+            <div class="directory-heading-line reveal delay-2"></div>
             Liderazgo académico
             e institucional
         </h2>
 
-        <p>
+        <p class="reveal delay-3">
             Profesionales comprometidos con la excelencia
             educativa y el desarrollo de la comunidad universitaria.
         </p>
@@ -325,7 +356,7 @@
 
         {{-- CARD 1 --}}
 
-        <article class="directory-card">
+        <article class="directory-card reveal delay-1">
 
             <div class="directory-image">
 
@@ -334,9 +365,7 @@
                     alt="Director FCA"
                 >
 
-                <span class="directory-role">
-                    Director
-                </span>
+
 
                 <div class="directory-overlay"></div>
 
@@ -347,6 +376,10 @@
                 <h3>
                     Dr. Nombre Apellido
                 </h3>
+
+                <span class="directory-role">
+                    Director
+                </span>
 
                 <p>
                     Liderando la transformación académica y
@@ -359,7 +392,7 @@
 
         {{-- CARD 2 --}}
 
-        <article class="directory-card">
+       <article class="directory-card reveal delay-2">
 
             <div class="directory-image">
 
@@ -367,10 +400,6 @@
                     src="{{ asset('images/directorio/secretaria.jpg') }}"
                     alt="Secretaría Académica"
                 >
-
-                <span class="directory-role">
-                    Secretaría Académica
-                </span>
 
                 <div class="directory-overlay"></div>
 
@@ -381,6 +410,10 @@
                 <h3>
                     Mtra. Nombre Apellido
                 </h3>
+
+                <span class="directory-role">
+                    Secretaría Académica
+                </span>
 
                 <p>
                     Coordinación y fortalecimiento de los
@@ -393,7 +426,7 @@
 
         {{-- CARD 3 --}}
 
-        <article class="directory-card">
+        <article class="directory-card reveal delay-3">
 
             <div class="directory-image">
 
@@ -416,6 +449,10 @@
                     Lic. Nombre Apellido
                 </h3>
 
+                 <span class="directory-role">
+                    Administración
+                </span>
+
                 <p>
                     Gestión administrativa y desarrollo
                     institucional de la FCA.
@@ -436,16 +473,17 @@
 
     <div class="facultad-plan-heading">
 
-        <span class="facultad-section-tag">
+       <span class="facultad-section-tag reveal">
             Plan de Desarrollo
         </span>
 
-        <h2>
+        <h2 class="reveal delay-1">
+            <div class="plan-heading-line reveal delay-2"></div>
             Innovación, crecimiento
             y visión estratégica
         </h2>
 
-        <p>
+        <p class="reveal delay-2">
             Impulsando una facultad moderna, sostenible
             y centrada en la excelencia académica.
         </p>
@@ -456,11 +494,15 @@
 
     <div class="plan-metrics">
 
-        <div class="metric-card">
+       <div class="metric-card reveal delay-1">
 
-            <h3 class="counter" data-target="95">0</h3>
+<div class="metric-number">
 
-            <span>%</span>
+    <h3 class="counter" data-target="95">0</h3>
+
+    <span>%</span>
+
+</div>
 
             <p>
                 Satisfacción estudiantil
@@ -468,7 +510,7 @@
 
         </div>
 
-        <div class="metric-card">
+        <div class="metric-card reveal delay-2">
 
             <h3 class="counter" data-target="42">0</h3>
 
@@ -480,7 +522,7 @@
 
         </div>
 
-        <div class="metric-card">
+        <div class="metric-card reveal delay-3">
 
             <h3 class="counter" data-target="18">0</h3>
 
@@ -492,7 +534,7 @@
 
         </div>
 
-        <div class="metric-card">
+        <div class="metric-card reveal delay-4">
 
             <h3 class="counter" data-target="2030">0</h3>
 
@@ -512,7 +554,7 @@
 
         <div class="roadmap-line"></div>
 
-        <div class="roadmap-item">
+        <div class="roadmap-item reveal delay-1">
 
             <div class="roadmap-dot"></div>
 
@@ -586,15 +628,15 @@
 
     <div class="organization-heading">
 
-        <span class="facultad-section-tag">
+        <span class="facultad-section-tag reveal">
             Organización
         </span>
 
-        <h2>
+        <h2 class="reveal delay-1">
             Estructura institucional
         </h2>
 
-        <p>
+        <p class="reveal delay-3">
             Una organización académica diseñada para impulsar
             la excelencia, la innovación y la formación integral.
         </p>
@@ -662,9 +704,12 @@
         {{-- LÍNEAS --}}
 
         <div class="org-connector"></div>
+        
+       
 
         {{-- NIVEL 3 --}}
 
+        
         <div class="org-level level-third">
 
             <div class="org-card small">

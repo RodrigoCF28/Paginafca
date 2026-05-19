@@ -7,44 +7,25 @@ use App\Models\Docente;
 
 class PaginasController extends Controller
 {
-    public function docentes() {
-        $categories = [
-            'Profesores de Tiempo Completo',
-            'Profesores de Medio Tiempo',
-            'Coordinadores del Programa Institucional de Inglés para FCA',
-            'Profesores por Asignatura',
+public function docentes()
+{
+    $categorias = [
+        'Profesores de Tiempo Completo',
+        'Profesores de Medio Tiempo',
+        'Coordinadores del Programa Institucional de Inglés para FCA',
+        'Profesores por Asignatura',
+    ];
+
+    $grupos = collect($categorias)->mapWithKeys(function ($categoria) {
+        return [
+            $categoria => Docente::where('categoria', $categoria)
+            ->orderBy('nombre')
+            ->get()
         ];
+    });
 
-        $lineas = [
-            'Contaduría Financiera',
-            'Administración Estratégica',
-            'Gestión Fiscal y Tributaria',
-            'Auditoría y Control Interno',
-            'Economía Empresarial',
-            'Sistemas de Información Gerencial',
-            'Investigación de Mercados',
-            'Estrategia y Política Pública',
-        ];
-
-        $docentes = Docente::all()->map(function ($docente, $index) use ($categories, $lineas) {
-            $categoryMap = [
-                'Mtro.' => $categories[0],
-                'Dr.' => $categories[1],
-                'Ing.' => $categories[2],
-                'Lic.' => $categories[3],
-            ];
-
-            $docente->categoria = $categoryMap[$docente->grado_academico] ?? $categories[$index % count($categories)];
-            $docente->linea_academica = $lineas[$index % count($lineas)];
-            return $docente;
-        });
-
-        $grupos = collect($categories)->mapWithKeys(function ($label) use ($docentes) {
-            return [$label => $docentes->where('categoria', $label)];
-        });
-
-        return view('docentes', compact('grupos'));
-    }
+    return view('docentes', compact('grupos'));
+}
 
     public function egresados() {
         return view('egresados');
@@ -52,5 +33,20 @@ class PaginasController extends Controller
 
     public function facultad() {
         return view('facultad');
+    }
+
+    public function ofertaEducativa()
+{
+    return view('oferta-educativa');
+}
+
+    public function vinculacion()
+    {
+        return view('vinculacion');
+    }
+
+    public function internacionalizacion()
+    {
+        return view('internacionalizacion');
     }
 }

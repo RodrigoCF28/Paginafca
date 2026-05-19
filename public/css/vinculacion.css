@@ -1,0 +1,505 @@
+/* =========================================================
+   VINCULACIÓN — vinculacion.css
+   Variables heredadas del layout global (--uady-azul, etc.)
+========================================================= */
+
+/* ── Utilidades generales de la vista ── */
+.vinc-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.vinc-section {
+    padding: 90px 0;
+}
+
+.vinc-section-header {
+    margin-bottom: 56px;
+}
+
+.vinc-label {
+    display: inline-block;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--uady-dorado);
+    margin-bottom: 12px;
+}
+
+.vinc-section-header h2 {
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    color: var(--uady-azul);
+    line-height: 1.15;
+}
+
+/* ── Reveal animation (se activa via JS del layout) ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity .65s ease, transform .65s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.vinc-hero {
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    background: var(--uady-azul);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.vinc-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 80% 50%, rgba(200,155,60,.18) 0%, transparent 65%),
+        linear-gradient(135deg, rgba(11,60,93,1) 0%, rgba(5,25,50,1) 100%);
+    z-index: 1;
+}
+
+/* patrón decorativo sutil */
+.vinc-hero::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    border: 80px solid rgba(200,155,60,.07);
+    z-index: 1;
+}
+
+.vinc-hero-overlay {
+    display: none; /* overlay ya hecho en ::before */
+}
+
+.vinc-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 80px 40px 80px 7%;
+    color: #fff;
+    max-width: 800px;
+}
+
+.vinc-hero-tag {
+    display: inline-block;
+    padding: 7px 18px;
+    border-radius: 999px;
+    background: rgba(200,155,60,.2);
+    border: 1px solid rgba(200,155,60,.45);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--uady-dorado);
+    margin-bottom: 20px;
+}
+
+.vinc-hero-content h1 {
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.vinc-hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.85;
+    color: rgba(255,255,255,.82);
+    max-width: 560px;
+}
+
+/* =========================================================
+   PRESENTACIÓN — dos columnas de texto
+========================================================= */
+
+.vinc-presentacion {
+    background: #fff;
+}
+
+.vinc-text-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.vinc-text-col p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--texto-secundario);
+    margin-bottom: 20px;
+}
+
+.vinc-text-col p:last-child {
+    margin-bottom: 0;
+}
+
+.vinc-text-col strong {
+    color: var(--uady-azul);
+}
+
+/* =========================================================
+   CITA — banda de color
+========================================================= */
+
+.vinc-quote-band {
+    background: var(--uady-azul);
+    padding: 64px 40px;
+    text-align: center;
+}
+
+.vinc-quote-band blockquote {
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+}
+
+.vinc-quote-band blockquote::before {
+    content: '\201C';
+    font-size: 5rem;
+    color: var(--uady-dorado);
+    opacity: .5;
+    position: absolute;
+    top: -24px;
+    left: -36px;
+    line-height: 1;
+}
+
+/* =========================================================
+   OBJETIVOS
+========================================================= */
+
+.vinc-objetivos {
+    background: var(--fondo-claro);
+}
+
+.vinc-obj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* Objetivo general ocupa fila completa */
+.vinc-obj-main {
+    grid-column: 1 / -1;
+    background: var(--uady-azul) !important;
+    color: #fff;
+}
+
+.vinc-obj-main .vinc-obj-tag {
+    color: var(--uady-dorado) !important;
+}
+
+.vinc-obj-main p {
+    color: rgba(255,255,255,.88) !important;
+    font-size: 1.05rem !important;
+}
+
+.vinc-obj-main .vinc-obj-icon {
+    background: rgba(200,155,60,.18) !important;
+    color: var(--uady-dorado) !important;
+}
+
+.vinc-obj-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 36px 32px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    box-shadow: 0 2px 16px rgba(0,0,0,.06);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.vinc-obj-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,.11);
+}
+
+.vinc-obj-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(11,60,93,.08);
+    color: var(--uady-azul);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.vinc-obj-tag {
+    display: block;
+    font-size: .73rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--uady-azul);
+    margin-bottom: 10px;
+}
+
+.vinc-obj-body p {
+    font-size: .97rem;
+    line-height: 1.8;
+    color: var(--texto-secundario);
+    margin: 0;
+}
+
+/* =========================================================
+   DOCUMENTOS
+========================================================= */
+
+.vinc-docs {
+    background: #fff;
+}
+
+.vinc-docs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.vinc-doc-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px 28px;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: border-color .25s, box-shadow .25s, transform .25s;
+    background: #fff;
+}
+
+.vinc-doc-card:hover {
+    border-color: var(--uady-dorado);
+    box-shadow: 0 6px 24px rgba(200,155,60,.15);
+    transform: translateY(-3px);
+}
+
+.vinc-doc-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: rgba(11,60,93,.07);
+    color: var(--uady-azul);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: background .25s, color .25s;
+}
+
+.vinc-doc-card:hover .vinc-doc-icon {
+    background: var(--uady-dorado);
+    color: #fff;
+}
+
+.vinc-doc-title {
+    display: block;
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--uady-azul);
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.vinc-doc-action {
+    font-size: .8rem;
+    color: var(--texto-secundario);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* =========================================================
+   RESULTADOS — acordeón
+========================================================= */
+
+.vinc-resultados {
+    background: var(--fondo-claro);
+}
+
+.vinc-accordion {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,.05);
+}
+
+.vinc-accordion-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--texto-principal);
+    text-align: left;
+    gap: 16px;
+    transition: background .2s;
+}
+
+.vinc-accordion-btn:hover {
+    background: rgba(11,60,93,.04);
+}
+
+.vinc-accordion-btn i {
+    flex-shrink: 0;
+    color: var(--uady-azul);
+    transition: transform .3s;
+}
+
+.vinc-accordion-btn.open i {
+    transform: rotate(180deg);
+}
+
+.vinc-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease, padding .35s ease;
+    padding: 0 28px;
+}
+
+.vinc-accordion-body.open {
+    max-height: 400px;
+    padding: 8px 28px 24px;
+}
+
+.vinc-accordion-body p {
+    color: var(--texto-secundario);
+    line-height: 1.8;
+    font-size: .97rem;
+}
+
+/* =========================================================
+   COORDINACIÓN
+========================================================= */
+
+.vinc-coord {
+    background: #fff;
+}
+
+.vinc-coord-card {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    background: var(--fondo-claro);
+    border-radius: 16px;
+    padding: 40px 44px;
+    max-width: 640px;
+    border: 1px solid #e5e5e5;
+}
+
+.vinc-coord-photo {
+    flex-shrink: 0;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--uady-dorado);
+}
+
+.vinc-coord-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vinc-coord-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--uady-azul);
+    margin-bottom: 6px;
+}
+
+.vinc-coord-role {
+    display: block;
+    font-size: .87rem;
+    color: var(--texto-secundario);
+    margin-bottom: 14px;
+}
+
+.vinc-coord-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .9rem;
+    color: var(--uady-azul);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color .2s;
+}
+
+.vinc-coord-email:hover {
+    color: var(--uady-dorado);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+    .vinc-text-grid,
+    .vinc-obj-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vinc-obj-main {
+        grid-column: auto;
+    }
+
+    .vinc-docs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .vinc-container {
+        padding: 0 20px;
+    }
+
+    .vinc-section {
+        padding: 60px 0;
+    }
+
+    .vinc-hero-content {
+        padding: 60px 20px;
+    }
+
+    .vinc-coord-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 24px;
+    }
+
+    .vinc-coord-email {
+        justify-content: center;
+    }
+}

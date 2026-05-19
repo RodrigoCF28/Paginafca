@@ -103,23 +103,18 @@
                 </div>
             </div>
 
-            <a href="/oferta"
-               class="{{ request()->is('oferta') ? 'active' : '' }}">
+            <a href="{{ route('oferta-educativa') }}"
+            class="{{ request()->is('oferta-educativa') ? 'active' : '' }}">
                 Oferta Educativa
             </a>
 
-            <a href="/investigacion"
-               class="{{ request()->is('investigacion') ? 'active' : '' }}">
-                Investigación
-            </a>
-
-            <a href="/vinculacion"
+            <a href="{{ route('vinculacion') }}"
                class="{{ request()->is('vinculacion') ? 'active' : '' }}">
                 Vinculación
             </a>
 
-            <a href="/internacional"
-               class="{{ request()->is('internacional') ? 'active' : '' }}">
+            <a href="{{ route('internacionalizacion') }}"
+               class="{{ request()->is('internacionalizacion') ? 'active' : '' }}">
                 Internacionalización
             </a>
 
@@ -159,11 +154,6 @@
             <a href="/oferta"
                class="menu-item {{ request()->is('oferta') ? 'active' : '' }}">
                 Oferta Educativa
-            </a>
-
-            <a href="/investigacion"
-               class="menu-item {{ request()->is('investigacion') ? 'active' : '' }}">
-                Investigación
             </a>
 
             <a href="/vinculacion"

@@ -250,17 +250,16 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 260px;
-    background: linear-gradient(135deg, transparent 20%, rgba(255,255,255,0.35) 50%, transparent 80%);
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.5) 40%, transparent 100%);
     transform: translateX(-100%);
     transition: transform 1s ease;
     pointer-events: none;
-    opacity: 0;
+    z-index: 5;
 }
 
 .tarjeta:hover::before {
     transform: translateX(100%);
-    opacity: 1;
 }
 
 .tarjeta img {
@@ -286,10 +285,30 @@
     margin: 0 22px 22px;
     color: #546170;
     line-height: 1.8;
+    flex-grow:1;
 }
 
 .tarjeta .btn-dorado {
-    margin: 0 22px 22px;
+    display:block;
+    margin:0 22px 22px;
+    padding:12px 20px;
+    background:linear-gradient(135deg,var(--uady-dorado),#d4a855);
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    border-radius:8px;
+    border:none;
+    font-weight:700;
+    font-size:0.9rem;
+    cursor:pointer;
+    transition:all .3s ease;
+    box-shadow:0 4px 15px rgba(200,155,60,0.25);
+}
+
+.tarjeta .btn-dorado:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 25px rgba(200,155,60,0.4);
+    background:linear-gradient(135deg,#d4a855,var(--uady-dorado));
 }
 
 /* Wide, centered button style from reference */

@@ -75,12 +75,14 @@
 
                 <!-- TOGGLE -->
                 <button class="menu-toggle"
-                        id="menu-toggle"
-                        aria-label="Abrir menú">
+                id="menu-toggle"
+            aria-label="Abrir menú">
 
-                    <i class="fas fa-bars"></i>
+            <span></span>
+            <span></span>
+            <span></span>
 
-                </button>
+        </button>
 
             </div>
 
@@ -89,19 +91,20 @@
         <!-- ================= MENU DESKTOP ================= -->
         <nav class="menu">
 
-            <div class="menu-item-wrapper dropdown">
-                <a href="/facultad"
-                   class="menu-link {{ request()->is('facultad') ? 'active' : '' }}"
-                   data-toggle="dropdown">
-                    Nuestra Facultad
-                    <i class="fas fa-chevron-down"></i>
-                </a>
-                <div class="dropdown-menu">
-                    <a href="/facultad">Nuestra Facultad</a>
-                    <a href="/docentes">Docentes</a>
-                    <a href="/egresados">Egresados</a>
-                </div>
-            </div>
+<a href="/facultad"
+   class="{{ request()->is('facultad') ? 'active' : '' }}">
+    Nuestra Facultad
+</a>
+
+<a href="/docentes"
+   class="{{ request()->is('docentes') ? 'active' : '' }}">
+    Docentes
+</a>
+
+<a href="/egresados"
+   class="{{ request()->is('egresados') ? 'active' : '' }}">
+    Egresados
+</a>
 
             <a href="{{ route('oferta-educativa') }}"
             class="{{ request()->is('oferta-educativa') ? 'active' : '' }}">
@@ -135,42 +138,63 @@
 
         </div>
 
-        <nav class="mobile-links">
+<nav class="mobile-links">
 
-            <div class="menu-item-wrapper dropdown-mobile">
-                <a href="/facultad"
-                   class="menu-item {{ request()->is('facultad') ? 'active' : '' }}"
-                   data-toggle="dropdown-mobile">
-                    Nuestra Facultad
-                    <i class="fas fa-chevron-down"></i>
-                </a>
-                <div class="dropdown-menu-mobile">
-                    <a href="/facultad" class="menu-item">Nuestra Facultad</a>
-                    <a href="/docentes" class="menu-item">Docentes</a>
-                    <a href="/egresados" class="menu-item">Egresados</a>
-                </div>
-            </div>
+    <!-- NUESTRA FACULTAD -->
+    <a href="{{ route('facultad') }}" class="menu-item">
+        Nuestra Facultad
+    </a>
 
-            <a href="/oferta"
-               class="menu-item {{ request()->is('oferta') ? 'active' : '' }}">
-                Oferta Educativa
-            </a>
+    <a href="{{ route('docentes') }}" class="menu-item">
+        Docentes
+    </a>
 
-            <a href="/vinculacion"
-               class="menu-item {{ request()->is('vinculacion') ? 'active' : '' }}">
-                Vinculación
-            </a>
+    <a href="{{ route('egresados') }}" class="menu-item">
+        Egresados
+    </a>
 
-            <a href="/internacional"
-               class="menu-item {{ request()->is('internacional') ? 'active' : '' }}">
-                Internacionalización
-            </a>
+    <!-- OFERTA -->
+    <a href="{{ route('oferta-educativa') }}" class="menu-item">
+        Oferta Educativa
+    </a>
 
-        </nav>
+    <!-- VINCULACION -->
+    <a href="{{ route('vinculacion') }}" class="menu-item">
+        Vinculación
+    </a>
+
+    <!-- INTERNACIONAL -->
+    <a href="{{ route('internacionalizacion') }}" class="menu-item">
+        Internacionalización
+    </a>
+
+    <!-- DIVIDER -->
+    <div class="mobile-divider"></div>
+
+    <!-- SERVICIOS -->
+    <a href="#" class="menu-item mobile-extra">
+        <i class="fas fa-laptop"></i>
+        Servicios
+    </a>
+
+    <a href="#" class="menu-item mobile-extra">
+        <i class="fas fa-envelope"></i>
+        Correo
+    </a>
+
+    <a href="#" class="menu-item mobile-extra">
+        <i class="fas fa-calendar"></i>
+        Calendario
+    </a>
+
+    <a href="#" class="menu-item mobile-extra">
+        <i class="fas fa-user"></i>
+        Personal
+    </a>
+
+</nav>
 
     </aside>
-
     <!-- OVERLAY -->
-    <div class="menu-overlay" id="overlay"></div>
-
+<div class="menu-overlay" id="overlay"></div>
 </header>

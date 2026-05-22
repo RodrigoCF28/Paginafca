@@ -36,7 +36,7 @@
     </div>
 
 </section>
-<section class="egresados-cards-section">
+<section class="egresados-cards-section" id="bolsa-de-trabajo">
     <div class="egresados-cards-container">
         <div class="egresados-card">
             <div class="egresados-card-icon">

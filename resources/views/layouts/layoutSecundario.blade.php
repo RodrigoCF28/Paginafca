@@ -69,17 +69,61 @@
         window.addEventListener("scroll", ajustarPaddingYScroll);
 
         // --- 3. Menú Móvil (Toggle) ---
-        if (toggle && menu && overlay) {
-            toggle.addEventListener("click", () => {
-                menu.classList.toggle("active");
-                overlay.classList.toggle("active");
-            });
+// --- 3. MENÚ MÓVIL ---
+const closeBtn = document.getElementById("close-menu");
 
-            overlay.addEventListener("click", () => {
-                menu.classList.remove("active");
-                overlay.classList.remove("active");
-            });
-        }
+function abrirMenu() {
+
+    if (!menu || !overlay) return;
+
+    menu.classList.add("active");
+    overlay.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarMenu() {
+
+    if (!menu || !overlay) return;
+
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+
+    document.body.style.overflow = "";
+}
+
+/* ABRIR */
+if (toggle) {
+
+    toggle.addEventListener("click", abrirMenu);
+
+}
+
+/* CERRAR CON X */
+if (closeBtn) {
+
+    closeBtn.addEventListener("click", cerrarMenu);
+
+}
+
+/* CERRAR CON OVERLAY */
+if (overlay) {
+
+    overlay.addEventListener("click", cerrarMenu);
+
+}
+
+/* CERRAR EN DESKTOP */
+window.addEventListener("resize", () => {
+
+    if (window.innerWidth > 860) {
+
+        cerrarMenu();
+
+    }
+
+});
+
 
         // --- 4. Botón Back to Top (Acción) ---
         if (btnBackToTop) {

@@ -109,73 +109,87 @@
             );
 
             ajustarInterfaz();
+/* ============================================
+   MENU MOVIL
+============================================ */
 
-            /* ============================================
-               MENU MOVIL
-            ============================================ */
+const closeBtn =
+document.getElementById("close-menu");
 
-            function abrirMenu(){
+function abrirMenu() {
 
-                menu.classList.add("active");
+    if (!menu || !overlay) return;
 
-                overlay.classList.add("active");
+    menu.classList.add("active");
 
-                document.body.style.overflow = "hidden";
+    overlay.classList.add("active");
 
-            }
+    document.body.style.overflow = "hidden";
 
-            function cerrarMenu(){
+}
 
-                menu.classList.remove("active");
+function cerrarMenu() {
 
-                overlay.classList.remove("active");
+    if (!menu || !overlay) return;
 
-                document.body.style.overflow = "";
+    menu.classList.remove("active");
 
-            }
+    overlay.classList.remove("active");
 
-            if(toggle){
+    document.body.style.overflow = "";
 
-                toggle.addEventListener(
-                    "click",
-                    abrirMenu
-                );
+}
 
-            }
+/* ABRIR */
+if (toggle) {
 
-            if(closeMenu){
+    toggle.addEventListener(
+        "click",
+        abrirMenu
+    );
 
-                closeMenu.addEventListener(
-                    "click",
-                    () => {
-                        cerrarMenu();
-                    }
-                );
+}
 
-            }
+/* CERRAR CON X */
+if (closeBtn) {
 
-            if(overlay){
+    closeBtn.addEventListener(
+        "click",
+        cerrarMenu
+    );
 
-                overlay.addEventListener(
-                    "click",
-                    cerrarMenu
-                );
+}
 
-            }
+/* CERRAR CON OVERLAY */
+if (overlay) {
 
-            /* ============================================
-               AUTO CERRAR MENU EN DESKTOP
-            ============================================ */
+    overlay.addEventListener(
+        "click",
+        cerrarMenu
+    );
 
-            window.addEventListener("resize", () => {
+}
 
-                if(window.innerWidth > 860){
+/* AUTO CERRAR EN DESKTOP */
+let lastWidth = window.innerWidth;
 
-                    cerrarMenu();
+window.addEventListener("resize", () => {
 
-                }
+    const currentWidth =
+    window.innerWidth;
 
-            });
+    if (
+        currentWidth > 860 &&
+        lastWidth <= 860
+    ) {
+
+        cerrarMenu();
+
+    }
+
+    lastWidth = currentWidth;
+
+});
 
             /* ============================================
                BACK TO TOP
@@ -282,6 +296,47 @@
         });
 
     </script>
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const openButtons = document.querySelectorAll('.modal-open');
+
+    openButtons.forEach(button => {
+
+        button.addEventListener('click', () => {
+
+            const modalId = button.dataset.modal;
+
+            document
+                .getElementById(modalId)
+                .classList.add('active');
+        });
+    });
+
+    const modals = document.querySelectorAll('.ft-modal-overlay');
+
+    modals.forEach(modal => {
+
+        const closeBtn = modal.querySelector('.ft-modal-close');
+
+        closeBtn.addEventListener('click', () => {
+
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+
+            if(e.target === modal){
+
+                modal.classList.remove('active');
+            }
+        });
+    });
+
+});
+
+</script>
 
 </body>
 </html>

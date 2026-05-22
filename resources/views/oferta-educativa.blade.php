@@ -62,7 +62,7 @@
                 <svg width="9" height="9" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 Nivel 1 Plus · CENEVAL
             </span>
-            <h3>Licenciatura de Contador Público</h3>
+            <h3>Contador Público</h3>
             <p>Forma profesionistas para registrar operaciones, auditar información financiera y gestionar el cumplimiento legal de las organizaciones.</p>
             <div class="lic-tags">
                 <span class="lic-tag">Mérida</span>
@@ -77,7 +77,7 @@
                 <svg width="9" height="9" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 Nivel 1 · CENEVAL
             </span>
-            <h3>Licenciatura en Mercadotecnia y Negocios Internacionales</h3>
+            <h3>Mercadotecnia y Negocios Internacionales</h3>
             <p>Prepara para detectar oportunidades de mercado y crear estrategias competitivas en entornos globales y digitalizados.</p>
             <div class="lic-tags">
                 <span class="lic-tag">Mérida</span>
@@ -107,7 +107,7 @@
                 <svg width="9" height="9" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 Nivel 1 Plus · CENEVAL
             </span>
-            <h3>Licenciatura en Administración</h3>
+            <h3>Administración</h3>
             <p>Desarrolla líderes capaces de dirigir equipos, gestionar recursos estratégicamente y elevar la competitividad con responsabilidad social.</p>
             <div class="lic-tags">
                 <span class="lic-tag">Mérida</span>
@@ -277,7 +277,7 @@
                 <span class="coord-dot"></span>
             </div>
             <p class="coord-rol">Coordinador(a)</p>
-            <h4>Nombre del Coordinador</h4>
+            <h4>LMNI Mireya Noemí Hernández Islas, MAN</h4>
             <p class="coord-programa">Mercadotecnia y Negocios Internacionales · Mérida</p>
             <a class="coord-email-btn" href="mailto:coordinacion.mni@correo.uady.mx">
                 <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
